@@ -28,7 +28,7 @@ csv, out = Path(sys.argv[1]), Path(sys.argv[2])
 
 HOLDOUT_DOMAINS = {"github.com", "wikipedia.org", "amazon.in", "google.com", "python.org", "irctc.co.in",
                    "stackoverflow.com", "onlinesbi.sbi", "youtube.com", "linkedin.com", "microsoft.com",
-                   "bbc.co.uk", "nytimes.com", "flipkart.com", "paypal.com", "apple.com", "reddit.com"}
+                   "bbc.co.uk", "nytimes.com", "flipkart.com", "paypal.com", "apple.com", "reddit.com", "openai.com"}
 
 SUBS = ["www", "www", "www", "mail", "docs", "support", "blog", "shop", "help", "app", "m", "news", "en", "accounts", "api", "login"]
 SEG = ["products", "product", "category", "blog", "news", "articles", "docs", "help", "support", "about", "contact", "login",
@@ -63,10 +63,16 @@ def legit_variant(url):
     reg = registered_domain(url)
     if not reg:
         return None
-    sub = rng.choice(SUBS)
-    host = reg if sub is None or (sub == "www" and rng.random() < .2) else f"{sub}.{reg}"
+    r = rng.random()
+    if r < 0.35:      # bare domain (real sites often have no 'www.'), often just the homepage
+        host = reg
+    elif r < 0.65:
+        host = f"www.{reg}"
+    else:
+        host = f"{rng.choice(SUBS)}.{reg}"
     scheme = "https" if rng.random() < 0.9 else "http"
-    return f"{scheme}://{host}{rand_path()}"
+    path = "" if (host == reg and rng.random() < 0.45) else rand_path()
+    return f"{scheme}://{host}{path}"
 
 
 raw = pd.read_csv(csv, usecols=["URL", "label"]).drop_duplicates("URL").reset_index(drop=True)
@@ -123,6 +129,8 @@ legit = [
     "https://www.bbc.co.uk/news/world-asia-india-12345678", "https://www.nytimes.com/2024/05/01/world/index.html",
     "https://www.flipkart.com/mobiles/pr?sid=tyy,4io", "https://www.paypal.com/signin", "https://appleid.apple.com/sign-in",
     "https://www.reddit.com/r/python/comments/abc123/title/",
+    "https://github.com", "https://apple.com", "https://openai.com", "https://wikipedia.org", "https://reddit.com",
+    "https://paypal.com", "https://google.com/", "https://microsoft.com", "https://flipkart.com", "https://nytimes.com",
 ]
 phish = [
     "http://secure-login-paypal.com.verify-account.xyz/signin", "http://192.168.10.5/hdfc/netbanking/login.php",

@@ -1,58 +1,58 @@
 {
- "rows": 436797,
- "augmented": 202213,
- "best_iteration": 595,
+ "rows": 436978,
+ "augmented": 202394,
+ "best_iteration": 598,
  "test_all": {
-  "accuracy": 0.9873198143171268,
-  "precision": 0.9770701552616446,
-  "recall": 0.9497624371157071,
-  "f1": 0.9632227891156463,
-  "roc_auc": 0.9963997632406352,
-  "fpr": 0.0047225676555930594,
+  "accuracy": 0.9799699365735026,
+  "precision": 0.9773977247042869,
+  "recall": 0.906442146450531,
+  "f1": 0.9405836505347109,
+  "roc_auc": 0.9926222841728606,
+  "fpr": 0.004443457009553432,
   "cm": [
    [
-    67229,
-    319
+    67215,
+    300
    ],
    [
-    719,
-    13593
+    1339,
+    12973
    ]
   ]
  },
  "test_original_only": {
-  "accuracy": 0.982410722926546,
-  "precision": 0.9994118079552974,
-  "recall": 0.9497624371157071,
-  "f1": 0.9739547880915702,
-  "roc_auc": 0.9973502679939379,
-  "fpr": 0.00029607698001480384,
+  "accuracy": 0.9674344333688184,
+  "precision": 0.9994607087827427,
+  "recall": 0.906442146450531,
+  "f1": 0.9506815183936684,
+  "roc_auc": 0.9971344617096253,
+  "fpr": 0.00025906735751295336,
   "cm": [
    [
-    27012,
-    8
+    27013,
+    7
    ],
    [
-    719,
-    13593
+    1339,
+    12973
    ]
   ]
  },
  "test_augmented_legit_only": {
-  "accuracy": 0.9812180889861415,
-  "precision": 0.9776323360184119,
-  "recall": 0.9497624371157071,
-  "f1": 0.9634958888573859,
-  "roc_auc": 0.9957660621343818,
-  "fpr": 0.0076737070667193055,
+  "accuracy": 0.9702227817614538,
+  "precision": 0.9779134629880899,
+  "recall": 0.906442146450531,
+  "f1": 0.940822394662412,
+  "roc_auc": 0.9896115658855813,
+  "fpr": 0.007235461168045438,
   "cm": [
    [
-    40217,
-    311
+    40202,
+    293
    ],
    [
-    719,
-    13593
+    1339,
+    12973
    ]
   ]
  },
@@ -60,195 +60,255 @@
   {
    "url": "https://github.com/scikit-learn/scikit-learn/issues",
    "true": "legitimate",
-   "prob": 0.008893713355064392,
+   "prob": 0.0024587835650891066,
    "correct": true
   },
   {
    "url": "https://en.wikipedia.org/wiki/Phishing",
    "true": "legitimate",
-   "prob": 0.0009271663147956133,
+   "prob": 0.0032171113416552544,
    "correct": true
   },
   {
    "url": "https://www.amazon.in/gp/cart/view.html",
    "true": "legitimate",
-   "prob": 0.19417394697666168,
+   "prob": 0.10516735911369324,
    "correct": true
   },
   {
    "url": "https://mail.google.com/mail/u/0/#inbox",
    "true": "legitimate",
-   "prob": 0.018109535798430443,
+   "prob": 0.04076698049902916,
    "correct": true
   },
   {
    "url": "https://docs.python.org/3/library/urllib.parse.html",
    "true": "legitimate",
-   "prob": 0.5158458352088928,
+   "prob": 0.7912549376487732,
    "correct": false
   },
   {
    "url": "https://www.irctc.co.in/nget/train-search",
    "true": "legitimate",
-   "prob": 0.009041245095431805,
+   "prob": 0.003985698334872723,
    "correct": true
   },
   {
    "url": "https://stackoverflow.com/questions/tagged/python",
    "true": "legitimate",
-   "prob": 0.20655938982963562,
+   "prob": 0.03904236853122711,
    "correct": true
   },
   {
    "url": "https://onlinesbi.sbi/",
    "true": "legitimate",
-   "prob": 0.5655009746551514,
-   "correct": false
+   "prob": 0.1824021190404892,
+   "correct": true
   },
   {
    "url": "https://www.youtube.com/watch?v=abc123",
    "true": "legitimate",
-   "prob": 0.011843317188322544,
+   "prob": 0.008711449801921844,
    "correct": true
   },
   {
    "url": "https://www.linkedin.com/in/someone/",
    "true": "legitimate",
-   "prob": 0.1405472457408905,
+   "prob": 0.0458286851644516,
    "correct": true
   },
   {
    "url": "https://www.google.com",
    "true": "legitimate",
-   "prob": 0.0024282350204885006,
+   "prob": 0.0024657242465764284,
    "correct": true
   },
   {
    "url": "https://www.microsoft.com/en-us/windows",
    "true": "legitimate",
-   "prob": 0.00585152767598629,
+   "prob": 0.0023795892484486103,
    "correct": true
   },
   {
    "url": "https://www.bbc.co.uk/news/world-asia-india-12345678",
    "true": "legitimate",
-   "prob": 7.084874232532457e-05,
+   "prob": 8.788935519987717e-05,
    "correct": true
   },
   {
    "url": "https://www.nytimes.com/2024/05/01/world/index.html",
    "true": "legitimate",
-   "prob": 0.8757866621017456,
+   "prob": 0.9220457673072815,
    "correct": false
   },
   {
    "url": "https://www.flipkart.com/mobiles/pr?sid=tyy,4io",
    "true": "legitimate",
-   "prob": 0.004339185543358326,
+   "prob": 0.0015748529694974422,
    "correct": true
   },
   {
    "url": "https://www.paypal.com/signin",
    "true": "legitimate",
-   "prob": 0.012414533644914627,
+   "prob": 0.0059240590780973434,
    "correct": true
   },
   {
    "url": "https://appleid.apple.com/sign-in",
    "true": "legitimate",
-   "prob": 0.7161707282066345,
+   "prob": 0.706259548664093,
    "correct": false
   },
   {
    "url": "https://www.reddit.com/r/python/comments/abc123/title/",
    "true": "legitimate",
-   "prob": 0.9920329451560974,
+   "prob": 0.990896999835968,
    "correct": false
+  },
+  {
+   "url": "https://github.com",
+   "true": "legitimate",
+   "prob": 0.006403254345059395,
+   "correct": true
+  },
+  {
+   "url": "https://apple.com",
+   "true": "legitimate",
+   "prob": 0.005462939385324717,
+   "correct": true
+  },
+  {
+   "url": "https://openai.com",
+   "true": "legitimate",
+   "prob": 0.008710071444511414,
+   "correct": true
+  },
+  {
+   "url": "https://wikipedia.org",
+   "true": "legitimate",
+   "prob": 0.007711127400398254,
+   "correct": true
+  },
+  {
+   "url": "https://reddit.com",
+   "true": "legitimate",
+   "prob": 0.008638896048069,
+   "correct": true
+  },
+  {
+   "url": "https://paypal.com",
+   "true": "legitimate",
+   "prob": 0.011290096677839756,
+   "correct": true
+  },
+  {
+   "url": "https://google.com/",
+   "true": "legitimate",
+   "prob": 0.33877795934677124,
+   "correct": true
+  },
+  {
+   "url": "https://microsoft.com",
+   "true": "legitimate",
+   "prob": 0.007250984665006399,
+   "correct": true
+  },
+  {
+   "url": "https://flipkart.com",
+   "true": "legitimate",
+   "prob": 0.007288108114153147,
+   "correct": true
+  },
+  {
+   "url": "https://nytimes.com",
+   "true": "legitimate",
+   "prob": 0.014988740906119347,
+   "correct": true
   },
   {
    "url": "http://secure-login-paypal.com.verify-account.xyz/signin",
    "true": "phishing",
-   "prob": 0.9999794960021973,
+   "prob": 0.9999958276748657,
    "correct": true
   },
   {
    "url": "http://192.168.10.5/hdfc/netbanking/login.php",
    "true": "phishing",
-   "prob": 0.9999977350234985,
+   "prob": 0.9999990463256836,
    "correct": true
   },
   {
    "url": "http://amaz0n-offers-update.top/account/verify",
    "true": "phishing",
-   "prob": 0.9970386028289795,
+   "prob": 0.9984608888626099,
    "correct": true
   },
   {
    "url": "https://sbi-kyc-update.online/index.html",
    "true": "phishing",
-   "prob": 0.8873717188835144,
+   "prob": 0.5361976027488708,
    "correct": true
   },
   {
    "url": "http://appleid.apple.com.reset-password.info/",
    "true": "phishing",
-   "prob": 0.9996192455291748,
+   "prob": 0.9999481439590454,
    "correct": true
   },
   {
    "url": "http://bit.ly/3xYzAbC",
    "true": "phishing",
-   "prob": 0.9997674822807312,
+   "prob": 0.9995942711830139,
    "correct": true
   },
   {
    "url": "http://free-crypto-giveaway.tk/claim",
    "true": "phishing",
-   "prob": 0.9974446296691895,
+   "prob": 0.99625563621521,
    "correct": true
   },
   {
    "url": "http://paypa1-secure-update.ml/login.php",
    "true": "phishing",
-   "prob": 0.999941349029541,
+   "prob": 0.9999620914459229,
    "correct": true
   },
   {
    "url": "https://netflix-billing-update.com/login/confirm?id=88213",
    "true": "phishing",
-   "prob": 0.40847811102867126,
+   "prob": 0.3146817982196808,
    "correct": false
   },
   {
    "url": "http://microsoft-support-alert.work/windows/security-warning.html",
    "true": "phishing",
-   "prob": 0.9818063974380493,
+   "prob": 0.9889963865280151,
    "correct": true
   },
   {
    "url": "http://www.g00gle-docs-share.link/view?doc=2291",
    "true": "phishing",
-   "prob": 0.9342508912086487,
+   "prob": 0.9182904362678528,
    "correct": true
   },
   {
    "url": "https://hdfcbank.com.secure-verify.cf/netbanking/login",
    "true": "phishing",
-   "prob": 0.9867160320281982,
+   "prob": 0.9975213408470154,
    "correct": true
   },
   {
    "url": "http://dhl-parcel-track-8841.top/pay",
    "true": "phishing",
-   "prob": 0.9993461966514587,
+   "prob": 0.9993563294410706,
    "correct": true
   },
   {
    "url": "https://login.facebook.com.account-recovery.xyz/checkpoint",
    "true": "phishing",
-   "prob": 0.9997619986534119,
+   "prob": 0.9999794960021973,
    "correct": true
   }
  ],
- "sanity_acc": 0.8125
+ "sanity_acc": 0.8809523809523809
 }
