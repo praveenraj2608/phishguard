@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+PhiUSIIL_Phishing_URL_Dataset.csv
+out/url_features_cache.parquet
+out/figs/
+# keep only the model the app serves
+out/phishguard_xgb.joblib
+out/phishguard_host_xgb.joblib
+out/phishguard_v2_*.joblib

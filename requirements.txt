@@ -1,0 +1,14 @@
+pandas==2.3.3
+numpy==2.3.5
+scikit-learn==1.8.0
+xgboost==3.3.0
+shap==0.54.1
+tldextract==5.4.0
+flask==3.1.2
+joblib==1.5.2
+gunicorn
+# training only (not needed to serve the app):
+matplotlib
+lightgbm
+optuna
+pyarrow

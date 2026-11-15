@@ -1,0 +1,284 @@
+{
+ "raw_rows": 235795,
+ "after_dedup": 235370,
+ "class_counts": {
+  "legitimate": 134850,
+  "phishing": 100520
+ },
+ "dataset_features": 50,
+ "url_features": 37,
+ "combined_features": 87,
+ "unique_domains": 175509,
+ "split": {
+  "train": 193481,
+  "test": 41889,
+  "shared_domains": 0
+ },
+ "models": {
+  "XGBoost_tuned": {
+   "accuracy": 1.0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "roc_auc": 1.0,
+   "fpr": 0.0,
+   "cm": [
+    [
+     26946,
+     0
+    ],
+    [
+     0,
+     14943
+    ]
+   ],
+   "train_seconds": 6.0
+  },
+  "LightGBM_tuned": {
+   "accuracy": 1.0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "roc_auc": 1.0,
+   "fpr": 0.0,
+   "cm": [
+    [
+     26946,
+     0
+    ],
+    [
+     0,
+     14943
+    ]
+   ],
+   "train_seconds": 1.9
+  },
+  "XGBoost_baseline": {
+   "accuracy": 1.0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "roc_auc": 1.0,
+   "fpr": 0.0,
+   "cm": [
+    [
+     26946,
+     0
+    ],
+    [
+     0,
+     14943
+    ]
+   ],
+   "train_seconds": 4.4
+  }
+ },
+ "xgb_best_params": {
+  "max_depth": 5,
+  "learning_rate": 0.038,
+  "subsample": 0.66,
+  "colsample_bytree": 0.57,
+  "min_child_weight": 4,
+  "reg_alpha": 4.4e-07,
+  "reg_lambda": 0.00025,
+  "gamma": 0.0014
+ },
+ "lgbm_best_params": {
+  "max_depth": 7,
+  "learning_rate": 0.15,
+  "subsample": 0.98,
+  "colsample_bytree": 0.69,
+  "min_child_samples": 7,
+  "reg_alpha": 4e-06,
+  "reg_lambda": 1.5e-07,
+  "num_leaves": 228
+ },
+ "cv": {
+  "XGBoost_tuned": {
+   "acc_mean": 0.999974157642514,
+   "acc_std": 7.309390491383234e-06,
+   "f1_mean": 0.99997081890748,
+   "f1_std": 8.167806126642305e-06,
+   "auc_mean": 0.9999999977257916,
+   "auc_std": 2.004567107845755e-09
+  },
+  "LightGBM_tuned": {
+   "acc_mean": 0.9999896631211173,
+   "acc_std": 1.4618554308637e-05,
+   "f1_mean": 0.999988244283783,
+   "f1_std": 1.662509330948409e-05,
+   "auc_mean": 1.0,
+   "auc_std": 0.0
+  }
+ },
+ "best_model": "XGBoost_tuned",
+ "shap_top20": {
+  "URLSimilarityIndex": 4.716917991638184,
+  "LineOfCode": 1.3814462423324585,
+  "NoOfExternalRef": 0.9317168593406677,
+  "NoOfSelfRef": 0.8893639445304871,
+  "NoOfImage": 0.7563413977622986,
+  "NoOfJS": 0.36085575819015503,
+  "IsHTTPS": 0.34838706254959106,
+  "url_feat_path_length": 0.26738059520721436,
+  "url_feat_is_https": 0.26432129740715027,
+  "LetterRatioInURL": 0.2220230996608734,
+  "HasSocialNet": 0.21604850888252258,
+  "url_feat_has_www": 0.18192058801651,
+  "url_feat_num_slashes": 0.1546410322189331,
+  "HasDescription": 0.1502283811569214,
+  "URLCharProb": 0.1321897953748703,
+  "HasCopyrightInfo": 0.11235079169273376,
+  "NoOfLettersInURL": 0.10756928473711014,
+  "NoOfCSS": 0.10538855195045471,
+  "LargestLineLength": 0.1004462018609047,
+  "SpacialCharRatioInURL": 0.08389954268932343
+ },
+ "url_only_model": {
+  "accuracy": 0.9976604836591946,
+  "precision": 0.9994616782181549,
+  "recall": 0.9939771130295122,
+  "f1": 0.9967118507582875,
+  "roc_auc": 0.9983017705833342,
+  "fpr": 0.0002968900764491947,
+  "cm": [
+   [
+    26938,
+    8
+   ],
+   [
+    90,
+    14853
+   ]
+  ]
+ },
+ "host_only_model": {
+  "accuracy": 0.8290959440425888,
+  "precision": 0.9047420965058236,
+  "recall": 0.5822124071471592,
+  "f1": 0.7084979030090802,
+  "roc_auc": 0.8221751041100843,
+  "fpr": 0.03399391375343279,
+  "cm": [
+   [
+    26030,
+    916
+   ],
+   [
+    6243,
+    8700
+   ]
+  ]
+ },
+ "sanity": [
+  {
+   "url": "https://github.com/scikit-learn/scikit-learn/issues",
+   "true": "legitimate",
+   "url_prob": 0.9999681711196899,
+   "host_prob": 0.21279394626617432
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Phishing",
+   "true": "legitimate",
+   "url_prob": 0.9999457597732544,
+   "host_prob": 0.7423408031463623
+  },
+  {
+   "url": "https://www.amazon.in/gp/cart/view.html",
+   "true": "legitimate",
+   "url_prob": 0.998735249042511,
+   "host_prob": 0.2141568958759308
+  },
+  {
+   "url": "https://mail.google.com/mail/u/0/#inbox",
+   "true": "legitimate",
+   "url_prob": 0.9999556541442871,
+   "host_prob": 0.9231456518173218
+  },
+  {
+   "url": "https://docs.python.org/3/library/urllib.parse.html",
+   "true": "legitimate",
+   "url_prob": 0.9999617338180542,
+   "host_prob": 0.8470665216445923
+  },
+  {
+   "url": "https://www.irctc.co.in/nget/train-search",
+   "true": "legitimate",
+   "url_prob": 0.998490571975708,
+   "host_prob": 0.09012391418218613
+  },
+  {
+   "url": "https://stackoverflow.com/questions/tagged/python",
+   "true": "legitimate",
+   "url_prob": 0.9999315738677979,
+   "host_prob": 0.18848051130771637
+  },
+  {
+   "url": "https://onlinesbi.sbi/",
+   "true": "legitimate",
+   "url_prob": 0.9999001026153564,
+   "host_prob": 0.1922423392534256
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=abc123",
+   "true": "legitimate",
+   "url_prob": 0.9991291165351868,
+   "host_prob": 0.21809980273246765
+  },
+  {
+   "url": "https://www.linkedin.com/in/someone/",
+   "true": "legitimate",
+   "url_prob": 0.9975928664207458,
+   "host_prob": 0.20300035178661346
+  },
+  {
+   "url": "http://secure-login-paypal.com.verify-account.xyz/signin",
+   "true": "phishing",
+   "url_prob": 0.9999974966049194,
+   "host_prob": 0.9996210336685181
+  },
+  {
+   "url": "http://192.168.10.5/hdfc/netbanking/login.php",
+   "true": "phishing",
+   "url_prob": 0.9999971389770508,
+   "host_prob": 0.9964115023612976
+  },
+  {
+   "url": "http://amaz0n-offers-update.top/account/verify",
+   "true": "phishing",
+   "url_prob": 0.9999973773956299,
+   "host_prob": 0.9980277419090271
+  },
+  {
+   "url": "https://sbi-kyc-update.online/index.html",
+   "true": "phishing",
+   "url_prob": 0.9999599456787109,
+   "host_prob": 0.9867357611656189
+  },
+  {
+   "url": "http://appleid.apple.com.reset-password.info/",
+   "true": "phishing",
+   "url_prob": 0.9999969005584717,
+   "host_prob": 0.9973811507225037
+  },
+  {
+   "url": "http://bit.ly/3xYzAbC",
+   "true": "phishing",
+   "url_prob": 0.9999971389770508,
+   "host_prob": 0.9866821765899658
+  },
+  {
+   "url": "http://free-crypto-giveaway.tk/claim",
+   "true": "phishing",
+   "url_prob": 0.9999972581863403,
+   "host_prob": 0.9933347702026367
+  },
+  {
+   "url": "http://paypa1-secure-update.ml/login.php",
+   "true": "phishing",
+   "url_prob": 0.9999972581863403,
+   "host_prob": 0.9991268515586853
+  }
+ ],
+ "total_seconds": 109.8
+}
